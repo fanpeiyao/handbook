@@ -8,7 +8,7 @@
   export default {
     data () {
       return {
-        msg: "我是hello 组件"
+        msg: "我是ppt 组件"
       }
     }
   }

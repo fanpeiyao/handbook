@@ -1,24 +1,42 @@
 import Vue from 'vue'
-import VueRouter from "vue-router"
+//引入material没有成功
+// import $ from 'jquery'
+/*import './assets/materialize/js/materialize.js'
+import './assets/materialize/css/materialize.css'*/
+
+import router from './router-config'
+import './../config'
+import './assets/css/index.css'
 import App from './App.vue'
-// const App = Vue.extend(require('./App.vue'))
-import Hello from './components/hello.vue'
-import About from './components/About.vue'
-import Home from './components/Home.vue'
-Vue.use(VueRouter);
 
-const routes = [
-  {path: '/Hello', component: Hello},
-  {path: '/Home', component: Home},
-  {path: '/About', component: About}
-];
 
-const router = new VueRouter({
-  routes // （ES6缩写）相当于 routes: routes
+
+$(function () {
+  //侧边栏
+  $('.top-nav').sideNav();
+  //卡片
+  $('.material-card >.mc-btn-action').click(function () {
+    var card = $(this).parent('.material-card')
+    var icon = $(this).children('i');
+    icon.addClass('arrowTo');
+    if(card.hasClass('mc-active')){
+      card.removeClass('mc-active');
+      window.setTimeout(function () {
+        icon.removeClass('arrowTo').addClass('menuIcon')
+      },100)
+    }else {
+      card.addClass('mc-active');
+      window.setTimeout(function () {
+        icon.removeClass('menuIcon').addClass('arrowTo')
+      },100)
+    }
+  })
 })
+
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app');
+
 

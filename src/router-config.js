@@ -1,25 +1,21 @@
-import Hello from './components/hello.vue'
-import About from './components/About.vue'
-import Home from './components/Home.vue'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Framework from './components/framework/framework'
+import Plugins from './components/plugins/plugins'
+import ppt from './components/ppt/ppt'
+import About from './components/About'
+Vue.use(VueRouter);
 
-module.exports = {
-  routes: function() {
-    return routes = [{
-      path: '/Hello',
-      component: Hello
-    }, {
-      path: '/Home',
-      component: Home
-    }, {
-      path: '/About',
-      component: About
-    }]
-  }
-}
-/*
-const routes = [
-  {path: '/Hello', component: Hello},
-  {path: '/Home', component: Home},
-  {path: '/About', component: About}
-];
-*/
+const router = new VueRouter({
+  routes : [
+    {path:'/',component: Framework},
+    {path: '/Framework', component: Framework},
+    {path: '/Plugins', component: Plugins},
+    {path: '/ppt', component: ppt},
+    {path: '/About', component: About}
+  ]
+})
+export default router
+
+
+

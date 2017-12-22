@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>home</h1>
+    <h1>hello</h1>
     <p>{{msg}}</p>
   </div>
 </template>
@@ -8,7 +8,7 @@
   export default {
     data () {
       return {
-        msg: "我是home 组件"
+        msg: "我是plugins 组件"
       }
     }
   }

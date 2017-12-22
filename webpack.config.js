@@ -8,7 +8,6 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
-
 /*指定后缀名为.vue 的文件通过vue-loader语法解析加载。
 js文件通过babel语法解析。
 然后png/jpg/gif/svg通过文件格式解析。*/
@@ -45,7 +44,12 @@ js文件通过babel语法解析。
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      /*'@': resolve('src'),
+      'materialize':resolve('src/assets/materialize'),*/
+
+      'assets': path.resolve(__dirname, '../src/assets'),
+
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
