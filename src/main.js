@@ -5,7 +5,6 @@ import Vue from 'vue'
 import './assets/materialize/css/materialize.css'*/
 
 import router from './router-config'
-import './../config'
 import './assets/css/index.css'
 import App from './App.vue'
 
