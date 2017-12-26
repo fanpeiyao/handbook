@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <!--<h1>{{showDetail}}</h1>-->
-    <h1>{{$route.query.showDetail}}</h1>
     <!--展示详情页-->
-    <transition name="router-slid" mode="out-in" v-if="showDetail">
+    <transition name="router-slid" mode="out-in" v-if="$route.query.showDetail">
       <keep-alive>
         <router-view name="detail"></router-view>
       </keep-alive>
