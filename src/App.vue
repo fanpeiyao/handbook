@@ -1,31 +1,39 @@
 <template>
   <div id="app">
-    <!--<router-view></router-view>-->
+    <!--<h1>{{showDetail}}</h1>-->
+    <h1>{{$route.query.showDetail}}</h1>
+    <!--展示详情页-->
+    <transition name="router-slid" mode="out-in" v-if="showDetail">
+      <keep-alive>
+        <router-view name="detail"></router-view>
+      </keep-alive>
+    </transition>
 
-    <app-header></app-header>
-    <!--中心块-->
-    <main>
-      <div class="section no-pad-bot">
-        <!--小、中屏标题栏-->
-        <div class="like-tab">
-          <div class="container center white-text">
-            WELCOME
+    <!--v-if="!showDetail"-->
+    <!--列表页-->
+    <div class="father" v-else>
+      <app-header ></app-header>
+      <!--中心块-->
+      <main>
+        <div class="section no-pad-bot" >
+          <!--小、中屏标题栏-->
+          <div class="like-tab">
+            <div class="container center white-text">
+              WELCOME
+            </div>
           </div>
         </div>
-      </div>
-      <!--内容列表-->
-      <div class="content">
-        <div class="row">
-          <transition name="router-fade" mode="out-in">
-            <keep-alive>
-              <router-view></router-view>
-            </keep-alive>
-          </transition>
-
+        <!--内容列表-->
+        <div class="content">
+            <transition name="router-fade" mode="out-in">
+              <keep-alive>
+                <router-view ></router-view>
+              </keep-alive>
+            </transition>
         </div>
-      </div>
-    </main>
-    <app-footer></app-footer>
+      </main>
+      <app-footer></app-footer>
+    </div>
 
 
 
@@ -39,6 +47,16 @@
     components: {
       AppHeader,
       AppFooter
+    },
+    data(){
+      return {
+        showDetail:this.$route.query.showDetail || false
+      }
+    },
+    watch: {
+      '$route' (to, from) {
+        console.log(this.$route.query.showDetail)
+      }
     }
   }
 </script>

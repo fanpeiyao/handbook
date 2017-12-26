@@ -24,7 +24,6 @@
   </header>
 </template>
 <script>
-  import './../../config'
   export default {
     data () {
       return config
