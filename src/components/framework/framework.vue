@@ -7,21 +7,23 @@
         <h2>
           <span>{{list.explain}}</span>
           <strong>
-            <!--<i class="material-icons">start</i>{{list.name}}-->
-            <router-link class="waves-effect waves-teal" :to="{path: list.to, query: { showDetail: true }}" >阅读手册</router-link>
-
+            <i class="material-icons">start</i>{{list.name}}
           </strong>
         </h2>
         <div class="mc-content">
           <div class="img-container">
-            <img :src="list.image" class="img-responsive">
+            <!--<img :src="list.image" class="img-responsive">-->
+            <img :src="src" class="img-responsive">
+
           </div>
           <div class="mc-description">{{list.detail}}</div>
         </div>
-        <a href="##" class="mc-btn-action menu" @click="listClick()">
-          <i class="layer"></i>
+        <a class="mc-btn-action menu" @click="listClick($event)">
+          <i class="layer" @click.stop></i>
         </a>
         <div class="mc-footer">
+          <router-link class="waves-effect waves-teal" :to="{path: list.to, query: { showDetail: true }}" >阅读手册</router-link>
+
           <!--<router-link class="waves-effect waves-teal" :to="{path: list.to, query: { showDetail: true }}" >阅读手册</router-link>-->
         </div>
       </article>
@@ -34,12 +36,13 @@
   export default {
     data () {
       return {
-        lists:config.modules[0].children
+        lists:config.modules[0].children,
+        src:require('../../assets/img/Juicy.png'),
       }
     },
     methods: {
-      listClick(){
-        console.log(444);
+      listClick(e){
+        console.log(e);
         /*var card = $(this).parent('.material-card')
         var icon = $(this).children('i');
         icon.addClass('arrowTo');

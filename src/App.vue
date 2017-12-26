@@ -7,7 +7,6 @@
       </keep-alive>
     </transition>
 
-    <!--v-if="!showDetail"-->
     <!--列表页-->
     <div class="father" v-else>
       <app-header ></app-header>
@@ -53,7 +52,6 @@
     },
     watch: {
       '$route' (to, from) {
-        console.log(this.$route.query.showDetail)
       }
     }
   }
