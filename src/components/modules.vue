@@ -1,13 +1,12 @@
 <template>
-  <div class="row">
+  <div class="row" :class="{ 'ppt': $route.params.index == 2, '': $route.params.index != 2}">
     <transition-group name="list-complete" tag="p">
       <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.index].children" v-bind:key="key">
         <article class="material-card Red" :class="list.color">
           <h2>
             <span>{{list.explain}}</span>
             <strong>
-              <!--<i class="material-icons" >start</i>{{list.name}}-->
-              <router-link  class="waves-effect waves-teal" :to="{path: list.to, query: { showDetail: true }}" >阅读手册</router-link>
+              <i class="material-icons" >start</i>{{list.name}}
             </strong>
           </h2>
           <div class="mc-content">

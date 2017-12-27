@@ -33,7 +33,16 @@ let config = {
         detail:'S223.js。',
       }
     ]},
-    {name:'PPT模板',to:'/ppt'},
+    {name:'PPT模板',to:'/ppt/2',children:[
+      {
+        name:'简洁',
+        detail:'伦敦风格简洁',
+      },
+      {
+        name:'扁平',
+        detail:'适合培训行业年终总结汇报简约扁平化ppt模板',
+      }
+    ]},
     {name:'关于',to:'/About'},
   ]
 };
