@@ -1,25 +1,20 @@
 <template>
   <div>
-    <h1>{{msg}}</h1>
-    <h1>{{data}}</h1>
+    <h1>{{$route.params.modules}}下的</h1>
+    <h1>{{$route.params.module}}</h1>
 
-    <h1>{{ret}}</h1>
-
-
-    {{$route.params.modules.children}}
   </div>
 </template>
 <script>
 
-  /*import './../assets/js/marked.min'
+  import './../assets/js/marked.min'
   import './../assets/js/prettify.min'
-  import './../assets/js/raphael.min'
+//  import './../assets/js/raphael.min'
   import './../assets/js/underscore.min'
-  import './../assets/js/sequence-diagram.min'
+//  import './../assets/js/sequence-diagram.min'
   import './../assets/js/flowchart.min'
   import './../assets/js/jquery.flowchart.min'
   import './../assets/js/editormd.min'
-*/
 
 
   export default {
