@@ -1,7 +1,10 @@
 
 let config = {
   modules:[
-    {name:'前端框架',to:'/Framework/0',children:[
+    {
+      name:'前端框架',
+      id:'Framework',
+      children:[
       {
         name:'Juicy',
         class:'Red',
@@ -17,7 +20,7 @@ let config = {
         detail:'S3，Juicy集成了工银聚团队开发必须的s3.js。',
       }
     ]},
-    {name:'控件库',to:'/Plugins/1',children:[
+    {name:'控件库',to:'/Plugins',children:[
       {
         name:'111',
         class:'Red',
@@ -33,14 +36,16 @@ let config = {
         detail:'S223.js。',
       }
     ]},
-    {name:'PPT模板',to:'/ppt/2',children:[
+    {name:'PPT模板',to:'/ppt',children:[
       {
         name:'简洁',
         detail:'伦敦风格简洁',
+        id:'1'
       },
       {
         name:'扁平',
         detail:'适合培训行业年终总结汇报简约扁平化ppt模板',
+        id:'2'
       }
     ]},
     {name:'关于',to:'/About'},

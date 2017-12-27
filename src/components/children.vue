@@ -10,6 +10,18 @@
   </div>
 </template>
 <script>
+
+  /*import './../assets/js/marked.min'
+  import './../assets/js/prettify.min'
+  import './../assets/js/raphael.min'
+  import './../assets/js/underscore.min'
+  import './../assets/js/sequence-diagram.min'
+  import './../assets/js/flowchart.min'
+  import './../assets/js/jquery.flowchart.min'
+  import './../assets/js/editormd.min'
+*/
+
+
   export default {
     data () {
       return {
