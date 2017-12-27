@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1>{{msg}}</h1>
-    <!--{{$route.params.modules.children}}-->
+    <h1>{{data}}</h1>
+
+    <h1>{{ret}}</h1>
+
+
+    {{$route.params.modules.children}}
   </div>
 </template>
 <script>
@@ -9,12 +14,24 @@
     data () {
       return {
         msg: "假如我是第一个juicy",
+        data:'',
+        ret:''
       }
     },
-    watch: {
-      '$route' (to, from) {
-        console.log(this.$route.query.showDetail)
-      }
+    mounted(){
+      this.$nextTick(()=>{
+        var that=this;
+        /*$.ajax({
+          type:"get",
+          url:"http://shake.applinzi.com/aa.json",
+          data:{user_id:1},
+          success:function(data){
+            that.ret=data.ret;
+            that.data=data.data;
+          }
+        })*/
+      })
     }
+
   }
 </script>

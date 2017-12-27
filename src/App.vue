@@ -6,10 +6,9 @@
         <router-view name="detail"></router-view>
       </keep-alive>
     </transition>
-
     <!--列表页-->
     <div class="father" v-else>
-      <app-header ></app-header>
+      <app-header></app-header>
       <!--中心块-->
       <main>
         <div class="section no-pad-bot" >
@@ -31,10 +30,6 @@
       </main>
       <app-footer></app-footer>
     </div>
-
-
-
-
   </div>
 </template>
 <script>
@@ -47,12 +42,9 @@
     },
     data(){
       return {
-        showDetail:this.$route.query.showDetail || false
+        showDetail:this.$route.query.showDetail || false,
       }
     },
-    watch: {
-      '$route' (to, from) {
-      }
-    }
+
   }
 </script>
