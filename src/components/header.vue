@@ -26,7 +26,7 @@
   export default {
     data () {
       return {
-        modules:config2.modules,
+        modules:config.modules,
         logo:require('./../assets/img/logo.png')
       }
     }

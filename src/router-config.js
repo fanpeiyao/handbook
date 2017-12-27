@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes : [
-    {path:'/',component:Modules},
+    {path:'/',component:Modules,redirect: '/Framework'},
     {path:'/About',component: About},
     {path:'/:modules',component: Modules},
     {path:'/:modules/:module',components:{detail:Children},

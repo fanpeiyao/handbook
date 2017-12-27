@@ -1,8 +1,5 @@
 <template>
-  <div class="row" :class="{ 'ppt': $route.params.index == 2, '': $route.params.index != 2}">
-    {{$route.params.modules}}
-    {{$route.params}}
-
+  <div class="row" :class="{ 'ppt': $route.params.modules == 'ppt', '': $route.params.index != 'ppt'}">
     <transition-group name="list-complete" tag="p">
       <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.modules].children" v-bind:key="key">
         <article class="material-card Red" :class="list.color">
@@ -34,7 +31,7 @@
   export default {
     data () {
       return {
-        lists:config2.modules,
+        lists:config.modules,
         src:require('../assets/img/Juicy.png'),
       }
     },
