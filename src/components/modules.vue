@@ -2,7 +2,9 @@
   <div class="row" :class="{ 'ppt': $route.params.modules == 'ppt', '': $route.params.index != 'ppt'}">
     <transition-group name="list-complete" tag="p">
       <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.modules].children" v-bind:key="key">
-        <article class="material-card Red" :class="list.color">
+        {{color[parseInt(Math.random()*10*key)]}}
+
+        <article class="material-card Red" :class="color[parseInt(Math.random()*10*key)]">
           <h2>
             <span>{{list.explain}}</span>
             <strong>
@@ -33,13 +35,29 @@
       return {
         lists:config.modules,
         src:require('../assets/img/Juicy.png'),
+        color:null
       }
     },
     methods: {
+      //每块的点击事件
 //      listClick(e){
 //          console.log(e.target);
 //      }
     },
+    computed: {
+
+    },
+    created () {
+
+      //颜色随机渲染类名
+//      randomColor: function() {
+//        var color:[]
+//        return this.say = 'rrr';
+//      }
+
+      this.color = ['Red','Pink','Purple','Deep-Purple']
+//      this.randomColor = color[parseInt(Math.random())]
+    }
   }
   $(function () {
     $('.material-card >.mc-btn-action').click(function () {

@@ -39,12 +39,6 @@
     components: {
       AppHeader,
       AppFooter
-    },
-    data(){
-      return {
-        showDetail:this.$route.query.showDetail || false,
-      }
-    },
-
+    }
   }
 </script>
