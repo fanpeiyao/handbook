@@ -14,7 +14,7 @@
         </div>
       </li>
       <li class="bold"  v-for="module in modules">
-        <router-link class="waves-effect waves-teal" v-bind:to="module.to">{{module.name}}</router-link>
+        <router-link class="waves-effect waves-teal" v-bind:to="module.id">{{module.name}}</router-link>
       </li>
     </ul>
     <div class="patreon-ad ">
@@ -26,7 +26,7 @@
   export default {
     data () {
       return {
-        modules:config.modules,
+        modules:config2.modules,
         logo:require('./../assets/img/logo.png')
       }
     }

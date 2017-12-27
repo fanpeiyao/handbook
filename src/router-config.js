@@ -9,8 +9,8 @@ const router = new VueRouter({
   routes : [
     {path:'/',component:Modules},
     {path:'/About',component: About},
-    {path:'/:modules/:index',component: Modules},
-    {path:'/:modules/:index/:module',components:{detail:Children},
+    {path:'/:modules',component: Modules},
+    {path:'/:modules/:module',components:{detail:Children},
     }
   ]
 })
