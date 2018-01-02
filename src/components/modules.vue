@@ -24,8 +24,8 @@
                   <i class="layer" ></i>
                 </a>
                 <div class="mc-footer">
-                  <router-link  v-if='$route.params.modules != "ppt"' class="waves-effect white-text btn-login btn " :to="{path: list.to, query: { showDetail: true }}" >阅读手册</router-link>
-                  <a v-else href=""   class="waves-effect white-text btn-login btn " >点击下载</a>
+                  <router-link  v-if='$route.params.modules != "resource"' class="waves-effect white-text btn-login btn " :to="{path: $route.params.modules+'/'+list.name, query: { showDetail: true }}" >阅读手册</router-link>
+                  <a v-else :href="'./../store/'+list.id+'.ppt'"  :download="list.detail+'.ppt'" class="waves-effect white-text btn-login btn " >点击下载</a>
                 </div>
               </article>
             </div>

@@ -6,18 +6,30 @@ config.modules.framework = {
   children:[
     {
       name:'Juicy',
-      color:'Red',
-      to:'/framework/Juicy',
+      image:'',
       explain:'Juicy框架--独立应用的前端开发框架',
       detail:'Juicy框架是前端团队构建的用来进行s3独立页面应用的开发工作的一个框架，Juicy集成了工银聚团队开发必须的s3.js。',
     },
     {
       name:'S3',
-      color:'pink',
-      to:'/framework/S3',
-      explain:'S3--独立应用的前端开发框架',
-      detail:'S3，Juicy集成了工银聚团队开发必须的s3.js。',
-    }
+      explain:'前端框架中的核心模块',
+      detail:'s3.js（或S3.js)提供了处理浏览器兼容性、前后台调用、页面跳转、数据处理、页面缓存、事件管理等方面的功能。',
+    },{
+      name:'Materializecss',
+      image:'',
+      explain:'Material Design',
+      detail:'由Google创建和设计，Material Design是一种设计语言，结合成功设计的经典原理以及创新和技术。',
+    },{
+      name:'Bootstrap',
+      image:'',
+      explain:'Bootstrap',
+      detail:'Bootstrap是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目',
+    },{
+      name:'FNUI',
+      image:'',
+      explain:'现代浏览器框架',
+      detail:'蜂鸟UI(以下称FNUI) 针对框架过重、加载过多、 模板引擎过于复杂等因素，重新构造的新版现代浏览器框架。',
+    },
   ]
 };
 
@@ -26,19 +38,28 @@ config.modules.plugins = {
   id:'plugins',
   children:[
     {
-      name:'111',
-      color:'Red',
-      to:'/Plugins/111',
-      explain:'Juicy框架--22',
-      detail:'，Juicy集成了工银聚团队开发必须的s3.js。',
+      name:'artTemplate',
+      image:'',
+      explain:'模板引擎',
+      detail:'art-template是一个简约、超快的模板引擎。它采用作用域预声明的技术来优化模板渲染速度，从而获得接近 JavaScript 极限的运行性能，并且同时支持 NodeJS 和浏览器。在线速度测试。',
+    },{
+      name:'Datatables',
+      image:'',
+      explain:'表格插件',
+      detail:'Datatables是一款jquery表格插件。是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。',
+    },{
+      name:'artTemplate',
+      image:'',
+      explain:'触摸滑动插件',
+      detail:'Swiper是纯javascript打造的滑动特效插件，面向手机、平板电脑等移动终端，使用简单、稳定、功能强大，是架构移动终端网站的重要选择。',
     },
-    {
-      name:'333',
-      color:'22',
-      to:'/Plugins/22',
-      explain:'S3--',
-      detail:'S223.js。',
-    }
+
+    // {
+    //   name:'artTemplate',
+    //   image:'',
+    //   explain:'现代浏览器框架',
+    //   detail:'',
+    // },
   ]
 };
 
@@ -49,7 +70,6 @@ config.modules.resource = {
     {
       name:'简洁',
       detail:'伦敦风格简洁',
-      link:"",
       id:'1'
     },
     {
