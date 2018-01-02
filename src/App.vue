@@ -1,32 +1,19 @@
 <template>
   <div id="app">
-    <!--展示详情页-->
-    <transition name="router-slid" mode="out-in" v-if="$route.query.showDetail">
-      <keep-alive>
-        <router-view name="detail"></router-view>
-      </keep-alive>
-    </transition>
+
     <!--列表页-->
-    <div class="father" v-else>
-      <app-header></app-header>
-      <!--中心块-->
+    <div class="father">
+      <router-view class="view sidebar" name="sidebar"></router-view>
+
       <main>
-        <div class="section no-pad-bot" >
-          <!--小、中屏标题栏-->
-          <div class="like-tab">
-            <div class="container center white-text">
-              WELCOME
-            </div>
-          </div>
-        </div>
+        <app-header></app-header>
+
         <!--内容列表-->
-        <div class="content">
-            <transition name="router-fade" mode="out-in">
-              <keep-alive>
-                <router-view ></router-view>
-              </keep-alive>
-            </transition>
-        </div>
+        <router-view class="view list" name="listView"></router-view>
+
+        <!--展示详情页-->
+        <router-view class="view two" name="detail"></router-view>
+
       </main>
       <app-footer></app-footer>
     </div>
