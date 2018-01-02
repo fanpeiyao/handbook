@@ -2,14 +2,10 @@
   <div class="content">
     <transition name="router-fade" mode="out-in">
       <keep-alive>
-
-        <div class="row">
-
-
+        <div class="row" :class="{ 'ppt': $route.params.modules == 'resource', '': $route.params.modules != 'resource'}">
           <transition-group name="list-complete" tag="p">
 
             <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.modules].children" v-bind:key="key">
-              {{color[parseInt(Math.random()*10*key)]}}
 
               <article class="material-card Red" :class="color[parseInt(Math.random()*10*key)]">
                 <h2>
@@ -36,8 +32,6 @@
 
           </transition-group>
         </div>
-
-
 
       </keep-alive>
     </transition>
@@ -72,7 +66,6 @@
 //      }
 
       this.color = ['Red','Pink','Purple','Deep-Purple']
-//      this.randomColor = color[parseInt(Math.random())]
     }
   }
   $(function () {

@@ -1,12 +1,8 @@
 <template>
-  <transition name="router-slid" mode="out-in" v-if="$route.query.showDetail">
-    <keep-alive>
-  <div>
-    <h1>{{$route.params.modules}}下的</h1>
-    <h1>{{$route.params.module}}</h1>
-  </div>
-    </keep-alive>
-  </transition>
+      <div>
+        <h1>{{$route.params.modules}}下的</h1>
+        <h1>{{$route.params.module}}</h1>
+      </div>
 </template>
 <script>
 

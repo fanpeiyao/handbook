@@ -6,10 +6,6 @@ const Detail = r => require.ensure([], () => r(require('./components/detail')), 
 const About = r => require.ensure([], () => r(require('./components/about')), 'About');
 Vue.use(VueRouter);
 
-
-
-
-
 const router = new VueRouter({
   routes : [
      {
@@ -33,7 +29,7 @@ const router = new VueRouter({
     },
     { path:'/:modules/:module',
       components:{
-        detail:Detail
+        listView:Detail
        },
     }
   ]

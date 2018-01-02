@@ -1,22 +1,21 @@
 <template>
   <div id="app">
-
     <!--列表页-->
-    <div class="father">
-      <router-view class="view sidebar" name="sidebar"></router-view>
-
-      <main>
+      <transition name="router-fade" mode="out-in">
+        <keep-alive>
+          <router-view class="view sidebar" name="sidebar"></router-view>
+        </keep-alive>
+      </transition>
+      <main v-bind:style="{marginLeft: $route.query.showDetail ? '0' : '300px'}">
         <app-header></app-header>
-
         <!--内容列表-->
-        <router-view class="view list" name="listView"></router-view>
-
-        <!--展示详情页-->
-        <router-view class="view two" name="detail"></router-view>
-
+        <transition name="router-fade" mode="out-in">
+          <keep-alive>
+            <router-view class="view list" name="listView"></router-view>
+          </keep-alive>
+        </transition>
       </main>
-      <app-footer></app-footer>
-    </div>
+      <app-footer v-bind:style="{marginLeft: $route.query.showDetail ? '0' : '300px'}"></app-footer>
   </div>
 </template>
 <script>

@@ -23,7 +23,7 @@ config.modules.framework = {
 
 config.modules.plugins = {
   name:'控件库',
-  id:'framework',
+  id:'plugins',
   children:[
     {
       name:'111',
@@ -42,7 +42,7 @@ config.modules.plugins = {
   ]
 };
 
-config.modules.ppt = {
+config.modules.resource = {
   name:'PPT模板',
   id:'resource',
   children:[

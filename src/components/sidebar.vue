@@ -16,14 +16,12 @@
     <li class="bold"  v-for="module in modules">
       <router-link class="waves-effect waves-teal" v-bind:to="module.id">{{module.name}}</router-link>
     </li>
-    <li class="bold">
-        <a href="##" class="waves-effect waves-teal">加入我们</a>
-    </li>
   </ul>
+  <div class="patreon-ad ">
+    <a href="##" class="waves-effect waves-teal">加入我们吧！</a>
+  </div>
 </header>
 </template>
-
-
 <script>
   export default {
     data () {
