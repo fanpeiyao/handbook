@@ -55,13 +55,14 @@
     },
     methods: {
       parseMd:function(handbook,str){
+        console.log(111);
         var resource = handbook.shift(),that = this;
         $.get(resource,function (result) {
           str = str + result;
           if (handbook.length > 0){
             that.parseMd(handbook,str);
           }else{
-            this.testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+            that.testEditormdView = editormd.markdownToHTML("test-editormd-view", {
               markdown        : str ,//+ "\r\n" + $("#append-test").text(),
               htmlDecode      : "style,script,iframe",  // you can filter tags decode
               tocm            : true,    // Using [TOCM]
@@ -77,10 +78,15 @@
       },
 
     },
-    mounted: function () {
-      console.log(this.$route.params.md);
-      var md = this.$route.params.md;
-      this.parseMd(Object.values(md),this.markdown);
+    beforeRouteEnter: function(to, from, next){
+      next(vm => {
+        console.log('=============beforeRouteEnter', vm.$route.params.md);
+        vm.parseMd(Object.values(vm.$route.params.md),vm.markdown);
+      })
+    },
+    created: function () {
+      console.log('=============created', this.$route.params.md);
+      this.parseMd(Object.values(this.$route.params.md),this.markdown);
     }
   }
 </script>
