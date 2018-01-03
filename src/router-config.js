@@ -24,10 +24,12 @@ const router = new VueRouter({
       path:'/about',
       components: {
         sidebar: SideBar,
-        listView: Modules
+        listView: About
       }
     },
-    { path:'/:modules/:module',
+    {
+      name: "detail",
+      path:'/:modules/:module?',
       components:{
         listView:Detail
        },

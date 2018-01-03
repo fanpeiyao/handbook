@@ -10,7 +10,7 @@ svg{
 @media only screen and (max-width: 992px) {
   main,
   footer {
-    margin-left: 0;
+    margin-left: 0!important;
   }
   .patreon-ad {
     display: none;
@@ -792,4 +792,7 @@ main > .section {
 }
 .list-complete-leave-active {
   position: absolute;
+}
+.page-footer .footer-copyright{
+  text-align: center;
 }

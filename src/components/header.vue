@@ -8,16 +8,4 @@
       </div>
     </div>
 </template>
-<script>
-  export default {
-    data () {
-      return {
-        modules:config.modules,
-        logo:require('./../assets/img/logo.png')
-      }
-    }
-  }
-  $(function () {
-    $('.top-nav').sideNav();
-  })
-</script>
+

@@ -6,7 +6,7 @@
           <router-view class="view sidebar" name="sidebar"></router-view>
         </keep-alive>
       </transition>
-      <main v-bind:style="{marginLeft: $route.query.showDetail ? '0' : '300px'}">
+      <main :style="{marginLeft: $route.params.showDetail ? '0' : '300px'}">
         <app-header></app-header>
         <!--内容列表-->
         <transition name="router-fade" mode="out-in">
@@ -15,7 +15,7 @@
           </keep-alive>
         </transition>
       </main>
-      <app-footer v-bind:style="{marginLeft: $route.query.showDetail ? '0' : '300px'}"></app-footer>
+      <app-footer :style="{marginLeft: $route.params.showDetail ? '0' : '300px'}"></app-footer>
   </div>
 </template>
 <script>

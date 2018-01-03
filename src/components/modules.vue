@@ -5,9 +5,9 @@
         <div class="row" :class="{ 'ppt': $route.params.modules == 'resource', '': $route.params.modules != 'resource'}">
           <transition-group name="list-complete" tag="p">
 
-            <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.modules].children" v-bind:key="key">
+            <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.modules].children" :key="key">
 
-              <article class="material-card Red" :class="color[parseInt(Math.random()*10*key)]">
+              <article class="material-card Red" :class="color[parseInt(Math.random()*4*key)]">
                 <h2>
                   <span>{{list.explain}}</span>
                   <strong>
@@ -16,7 +16,7 @@
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img :src="src" class="img-responsive">
+                    <img :src="list.image" class="img-responsive">
                   </div>
                   <div class="mc-description">{{list.detail}}</div>
                 </div>
@@ -24,12 +24,11 @@
                   <i class="layer" ></i>
                 </a>
                 <div class="mc-footer">
-                  <router-link  v-if='$route.params.modules != "resource"' class="waves-effect white-text btn-login btn " :to="{path: $route.params.modules+'/'+list.name, query: { showDetail: true }}" >阅读手册</router-link>
-                  <a v-else :href="'./../store/'+list.id+'.ppt'"  :download="list.detail+'.ppt'" class="waves-effect white-text btn-login btn " >点击下载</a>
+                  <router-link  v-if='$route.params.modules != "resource"' class="waves-effect white-text btn-login btn " :to="{name:'detail', params: { modules:$route.params.modules,module:list.name,md: list.md,showDetail: true}}" >阅读手册</router-link>
+                  <a v-else :href="'./../../resource/'+list.id+'.ppt'"  :download="list.detail+'.ppt'" class="waves-effect white-text btn-login btn " >点击下载</a>
                 </div>
               </article>
             </div>
-
           </transition-group>
         </div>
 
@@ -44,7 +43,6 @@
     data () {
       return {
         lists:config.modules,
-        src:require('../assets/img/Juicy.png'),
         color:null
       }
     },
@@ -58,14 +56,7 @@
 
     },
     created () {
-
-      //颜色随机渲染类名
-//      randomColor: function() {
-//        var color:[]
-//        return this.say = 'rrr';
-//      }
-
-      this.color = ['Red','Pink','Purple','Deep-Purple']
+      this.color = ['Red','Pink','Purple','Deep-Purple','Indigo','Blue','Light-Blue','Cyan','Teal']
     }
   }
   $(function () {

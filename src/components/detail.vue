@@ -1,43 +1,94 @@
+<style>
+  #layout > header{
+    width: auto;
+  }
+
+  #sidebar {
+    /*width: 400px;*/
+    max-width:30%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+    z-index: 100;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  #sidebar:hover {
+    overflow: auto;
+  }
+
+  #sidebar h1 {
+    font-size: 16px;
+  }
+
+  #custom-toc-container {
+    padding-left: 0;
+  }
+
+  #test-editormd-view{
+    padding-left: 30%;
+    padding-right: 0;
+    margin: 0;
+  }
+</style>
 <template>
-      <div>
-        <h1>{{$route.params.modules}}下的</h1>
-        <h1>{{$route.params.module}}</h1>
-      </div>
+  <div id="layout">
+    <div id="sidebar">
+      <h1>目录</h1>
+      {{$route.params}}
+      {{this.$route.params.md}}
+      <div class="markdown-body editormd-preview-container" id="custom-toc-container"></div>
+    </div>
+    <div id="test-editormd-view"></div>
+  </div>
 </template>
 <script>
-
-//  import './../assets/js/marked.min'
-//  import './../assets/js/prettify.min'
-////  import './../assets/js/raphael.min'
-//  import './../assets/js/underscore.min'
-//  import './../assets/js/sequence-diagram.min'
-//  import './../assets/js/flowchart.min'
-//  import './../assets/js/jquery.flowchart.min'
-//  import './../assets/js/editormd.min'
-
-//
-//  export default {
+  var testEditormdView,markdown='';
+  var handbook = ['./md/juicy.md'];
+  parseMd(handbook,markdown);
+  function parseMd(handbook,str) {
+    var resource = handbook.shift();
+    $.get(resource,function (result) {
+      str = str + result;
+      if (handbook.length > 0){
+        parseMd(handbook,str);
+      }else{
+        testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+          markdown        : str ,//+ "\r\n" + $("#append-test").text(),
+          //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+          htmlDecode      : "style,script,iframe",  // you can filter tags decode
+          //toc             : false,
+          tocm            : true,    // Using [TOCM]
+          tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+          //gfm             : false,
+          //tocDropdown     : true,
+          // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+          emoji           : true,
+          taskList        : true,
+          tex             : true,  // 默认不解析
+          flowChart       : true,  // 默认不解析
+          sequenceDiagram : true,  // 默认不解析
+        });
+      }
+    })
+  }
+  export default {
 //    data () {
 //      return {
-//        msg: "假如我是第一个juicy",
 //        data:'',
 //        ret:''
 //      }
 //    },
-//    mounted(){
-//      this.$nextTick(()=>{
-//        var that=this;
-//        /*$.ajax({
-//          type:"get",
-//          url:"http://shake.applinzi.com/aa.json",
-//          data:{user_id:1},
-//          success:function(data){
-//            that.ret=data.ret;
-//            that.data=data.data;
-//          }
-//        })*/
-//      })
-//    }
-//
-//  }
+    mounted(){
+
+    },
+
+
+  }
 </script>
