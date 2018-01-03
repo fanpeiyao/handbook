@@ -40,7 +40,7 @@
 
 <script>
   export default {
-    data () {
+    data :function(){
       return {
         lists:config.modules,
         color:null

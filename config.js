@@ -22,11 +22,15 @@ config.modules.framework = {
       image:'./static/material.png',
       explain:'Material Design',
       detail:'由Google创建和设计，Material Design是一种设计语言，结合成功设计的经典原理以及创新和技术。',
+      md:['./md/theme.md']
+
     },{
       name:'Bootstrap',
       image:'./static/bootstrap.png',
       explain:'Bootstrap',
       detail:'Bootstrap是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目',
+      md:['./md/jump.md']
+
     },{
       name:'FNUI',
       image:'./static/fnui.png',
