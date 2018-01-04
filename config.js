@@ -35,6 +35,7 @@ config.modules.framework = {
       name:'FNUI',
       image:'./static/fnui.png',
       explain:'现代浏览器框架',
+      md:['./md/istroe.md'],
       detail:'蜂鸟UI(以下称FNUI) 针对框架过重、加载过多、 模板引擎过于复杂等因素，重新构造的新版现代浏览器框架。',
     },
   ]

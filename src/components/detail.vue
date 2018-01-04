@@ -41,7 +41,7 @@
       <h1>目录</h1>
       <div class="markdown-body editormd-preview-container" id="custom-toc-container"></div>
     </div>
-    <div id="test-editormd-view"></div>
+    <div id="test-editormd-view" ></div>
   </div>
 </template>
 <script>
@@ -55,16 +55,16 @@
     },
     methods: {
       parseMd:function(handbook,str){
-        console.log(111);
-        var resource = handbook.shift(),that = this;
+        console.log(handbook)
+        let resource = handbook.shift(),that = this;
         $.get(resource,function (result) {
           str = str + result;
           if (handbook.length > 0){
             that.parseMd(handbook,str);
           }else{
             that.testEditormdView = editormd.markdownToHTML("test-editormd-view", {
-              markdown        : str ,//+ "\r\n" + $("#append-test").text(),
-              htmlDecode      : "style,script,iframe",  // you can filter tags decode
+              markdown        : str ,
+              htmlDecode      : "style,script,iframe",
               tocm            : true,    // Using [TOCM]
               tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
               emoji           : true,
@@ -75,18 +75,14 @@
             });
           }
         })
-      },
-
+      }
     },
-    beforeRouteEnter: function(to, from, next){
-      next(vm => {
-        console.log('=============beforeRouteEnter', vm.$route.params.md);
-        vm.parseMd(Object.values(vm.$route.params.md),vm.markdown);
-      })
-    },
-    created: function () {
-      console.log('=============created', this.$route.params.md);
+    activated(){
       this.parseMd(Object.values(this.$route.params.md),this.markdown);
+    },
+    deactivated(){
+      $('#test-editormd-view').html('');
+      $('#custom-toc-container').html('');
     }
   }
 </script>
