@@ -45,9 +45,9 @@
     },
     methods: {
       listClick(e){
-          var el = e.currentTarget;
-        var card = $(el).parent('.material-card')
-        var icon = $(el).children('i');
+        const el = e.currentTarget,
+              card = $(el).parent('.material-card'),
+              icon = $(el).children('i');
         icon.addClass('arrowTo');
         if(card.hasClass('mc-active')){
           card.removeClass('mc-active');
