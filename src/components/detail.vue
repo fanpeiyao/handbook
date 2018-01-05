@@ -55,7 +55,6 @@
     },
     methods: {
       parseMd:function(handbook,str){
-        console.log(handbook)
         let resource = handbook.shift(),that = this;
         $.get(resource,function (result) {
           str = str + result;
