@@ -18,7 +18,7 @@
                   </div>
                   <div class="mc-description">{{list.detail}}</div>
                 </div>
-                <a class="mc-btn-action menu" @click="listClick($event)">
+                <a class="mc-btn-action menu" @click="listClick">
                   <i class="layer" ></i>
                 </a>
                 <div class="mc-footer">
