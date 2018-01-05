@@ -77,7 +77,9 @@
       }
     },
     activated(){
-      this.parseMd(Object.values(this.$route.params.md),this.markdown);
+      if(this.$route.params.md){
+        this.parseMd(Object.values(this.$route.params.md),this.markdown);
+      }
     },
     deactivated(){
       $('#test-editormd-view').html('');

@@ -9,33 +9,31 @@ config.modules.framework = {
       image:'./static/Juicy.png',
       explain:'Juicy框架--独立应用的前端开发框架',
       detail:'Juicy框架是前端团队构建的用来进行s3独立页面应用的开发工作的一个框架，Juicy集成了工银聚团队开发必须的s3.js。',
-      md:['./md/juicy.md']
+      md:['./static/md/juicy.md']
     },
     {
       name:'S3',
       image:'./static/s3js.png',
       explain:'前端框架中的核心模块',
       detail:'s3.js（或S3.js)提供了处理浏览器兼容性、前后台调用、页面跳转、数据处理、页面缓存、事件管理等方面的功能。',
-      md:['./md/ajax.md','./md/calculator.md','./md/element.md']
+      md:['./static/md/ajax.md','./static/md/calculator.md','./static/md/element.md']
     },{
       name:'Materializecss',
       image:'./static/material.png',
       explain:'Material Design',
       detail:'由Google创建和设计，Material Design是一种设计语言，结合成功设计的经典原理以及创新和技术。',
-      md:['./md/theme.md']
-
+      md:['./static/md/istroe.md'],
     },{
       name:'Bootstrap',
       image:'./static/bootstrap.png',
       explain:'Bootstrap',
       detail:'Bootstrap是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目',
-      md:['./md/jump.md']
-
+      md:['./static/md/jump.md']
     },{
       name:'FNUI',
       image:'./static/fnui.png',
       explain:'现代浏览器框架',
-      md:['./md/istroe.md'],
+      link:'./static/FNUI',
       detail:'蜂鸟UI(以下称FNUI) 针对框架过重、加载过多、 模板引擎过于复杂等因素，重新构造的新版现代浏览器框架。',
     },
   ]

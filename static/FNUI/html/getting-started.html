@@ -1,0 +1,49 @@
+<h2>FNUI 2.0 概述</h2>
+<hr>
+<p>蜂鸟UI(以下称FNUI) 2.0 是基于FNUI 1.0版本的基础上，针对框架过重、加载过多、
+	模板引擎过于复杂等因素，重新构造的新版现代浏览器框架。</p>
+<p>框架重写了核心内容，同时参考bootstrap控件书写规范，定义了新的组件和控件，并使用自己的命名空间fn。</p>
+<p>FNUI 2.0 采用requirejs管理模块，实现模块的自动加载，使用less管理样式表模块，实现样式可复制性；
+	同时FNUI2.0使用grunt进行发布，兼容requirejs和普通加载两种加载模式，开发者可以根据自己的工作习惯 使用FNUI的功能。</p>
+
+
+
+
+<h2>1、使用fnui的主题</h2>
+<hr>
+<p>如果你仅仅喜欢fnui的主题、布局和风格，而不需要使用fnui的js插件,那么仅需要使用fnui的主题就可以了，在页面中引用fnui的方法如下</p>
+
+<code>&lt;link href = "your path/fnuitheme.min.css" rel="stylesheet"&gt;</code>
+
+<h2>2、引用风格和插件</h2>
+<hr>
+<p>如果你想使用fnui的主题、布局风格，以及js插件，除了引用fnui的主题文件外，还需要引用fnui的js文件。</p>
+<p>通过link标签引用CSS样式表</p>
+<code>&lt;link href = "your path/fnui.min.css" rel="stylesheet"&gt;</code>
+<p>如果你还想使用FNUI的js功能</p>
+
+<code>&lt;script src = "your path/jquery.min.js"&gt;
+	&lt;/script&gt;
+&lt;script src = "your path/fnui.min.js"&gt;
+	&lt;/script&gt;</code>
+
+
+<h2>使用AMD规范按需加载</h2>
+<hr>
+<p>如果你是AMD规范和模块化加载的拥护者，你还可以使用requirejs来加载，此时，你的代码看起来应该是这样的</p>
+<p><i class="fn-icon-warning"></i>由于FNUI依赖于jquery,请注意在加载fnui之前需要加载jquery</p>
+<code>&lt;script data-main="your main file path/main" src = "your
+	path/require.js"&gt; &lt;/script&gt;</code>
+<p>当然，如果你觉得requirejs太重了，你可以使用FNUI团队专门为AMD模块化加载支持而开发的fnuiloader，
+	为了减轻重量，fnuiloader不支持data-main入口，所以，你要单独引入你的main文件，不过即使是这样，加载量
+	也从原来的80KB下降到2KB了</p>
+<p>
+	<code>&lt;script src = "your path/fnuiloader.min.js"&gt;
+		&lt;/script&gt;</code>
+</p>
+<code>&lt;script src = "your path/main.js"&gt; &lt;/script&gt;</code>
+
+
+<h2>自定义源代码</h2>
+<hr>
+<p>当然，如果你对FNUI 2.0的表现仍然不满意，我们提供了FNUI的源代码，你可以根据自己的喜好进行修改。也欢迎提出更优秀的方案。详情请见，自定义开发。
