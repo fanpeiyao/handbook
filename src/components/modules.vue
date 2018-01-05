@@ -4,9 +4,7 @@
       <keep-alive>
         <div class="row" :class="{ 'ppt': $route.params.modules == 'resource', '': $route.params.modules != 'resource'}">
           <transition-group name="list-complete" tag="p">
-
             <div class="col s12 m6 l4 list-complete-item" v-for="(list, key) in lists[$route.params.modules].children" :key="key">
-
               <article class="material-card Red" :class="color[parseInt(Math.random()*4*key)]">
                 <h2>
                   <span>{{list.explain}}</span>
@@ -20,7 +18,7 @@
                   </div>
                   <div class="mc-description">{{list.detail}}</div>
                 </div>
-                <a class="mc-btn-action menu" >
+                <a class="mc-btn-action menu" @click="listClick($event)">
                   <i class="layer" ></i>
                 </a>
                 <div class="mc-footer">
@@ -37,8 +35,6 @@
     </transition>
   </div>
 </template>
-
-
 <script>
   export default {
     data :function(){
@@ -48,34 +44,26 @@
       }
     },
     methods: {
-      //每块的点击事件
-//      listClick(e){
-//          console.log(e.target);
-//      }
-    },
-    computed: {
-
+      listClick(e){
+          var el = e.currentTarget;
+        var card = $(el).parent('.material-card')
+        var icon = $(el).children('i');
+        icon.addClass('arrowTo');
+        if(card.hasClass('mc-active')){
+          card.removeClass('mc-active');
+          window.setTimeout(function () {
+            icon.removeClass('arrowTo').addClass('menuIcon')
+          },100)
+        }else {
+          card.addClass('mc-active');
+          window.setTimeout(function () {
+            icon.removeClass('menuIcon').addClass('arrowTo')
+          },100)
+        }
+      }
     },
     created () {
       this.color = ['Red','Pink','Purple','Deep-Purple','Indigo','Blue','Light-Blue','Cyan','Teal']
     }
   }
-  $(function () {
-    $('.material-card >.mc-btn-action').click(function () {
-      var card = $(this).parent('.material-card')
-      var icon = $(this).children('i');
-      icon.addClass('arrowTo');
-      if(card.hasClass('mc-active')){
-        card.removeClass('mc-active');
-        window.setTimeout(function () {
-          icon.removeClass('arrowTo').addClass('menuIcon')
-        },100)
-      }else {
-        card.addClass('mc-active');
-        window.setTimeout(function () {
-          icon.removeClass('menuIcon').addClass('arrowTo')
-        },100)
-      }
-    })
-  })
 </script>
