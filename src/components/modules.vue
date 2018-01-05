@@ -51,14 +51,14 @@
         icon.addClass('arrowTo');
         if(card.hasClass('mc-active')){
           card.removeClass('mc-active');
-          window.setTimeout(function () {
+          setTimeout(function () {
             icon.removeClass('arrowTo').addClass('menuIcon')
-          },100)
+          },0)
         }else {
           card.addClass('mc-active');
-          window.setTimeout(function () {
+          setTimeout(function () {
             icon.removeClass('menuIcon').addClass('arrowTo')
-          },100)
+          },0)
         }
       }
     },
