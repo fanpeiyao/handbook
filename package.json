@@ -2,11 +2,11 @@
   "name": "handbook",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "peiyao <952568789@qq.com>",
+  "author": "",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
