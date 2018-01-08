@@ -6,6 +6,7 @@ const Detail = r => require.ensure([], () => r(require('./components/detail')), 
 const About = r => require.ensure([], () => r(require('./components/about')), 'About');
 Vue.use(VueRouter);
 
+console.log(About)
 const router = new VueRouter({
   routes : [
      {
@@ -14,17 +15,17 @@ const router = new VueRouter({
        redirect: '/framework'
      },
     {
-      path: '/:modules',
-      components: {
-        sidebar: SideBar,
-        listView: Modules
-      }
-    },
-    {
       path:'/about',
       components: {
         sidebar: SideBar,
         listView: About
+      }
+    },
+    {
+      path: '/:modules',
+      components: {
+        sidebar: SideBar,
+        listView: Modules
       }
     },
     {

@@ -9,7 +9,7 @@
     <ul id="slide-nav" class="side-nav fixed">
       <li class="logo">
         <div id="logo-container" class="brand-logo">
-          <img src="./../../static/logo.png" alt="" height="100px">
+          <img src="../../static/image/logo.png" alt="" height="100px">
           <div>前端资源仓库 v0.0.1</div>
         </div>
       </li>

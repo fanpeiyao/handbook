@@ -6,32 +6,32 @@ config.modules.framework = {
   children:[
     {
       name:'Juicy',
-      image:'./static/Juicy.png',
+      image:'./static/image/Juicy.png',
       explain:'Juicy框架--独立应用的前端开发框架',
       detail:'Juicy框架是前端团队构建的用来进行s3独立页面应用的开发工作的一个框架，Juicy集成了工银聚团队开发必须的s3.js。',
       md:['./static/md/juicy.md']
     },
     {
       name:'S3',
-      image:'./static/s3js.png',
+      image:'./static/image/s3js.png',
       explain:'前端框架中的核心模块',
       detail:'s3.js（或S3.js)提供了处理浏览器兼容性、前后台调用、页面跳转、数据处理、页面缓存、事件管理等方面的功能。',
       md:['./static/md/ajax.md','./static/md/calculator.md','./static/md/element.md']
     },{
       name:'Materializecss',
-      image:'./static/material.png',
+      image:'./static/image/material.png',
       explain:'Material Design',
       detail:'由Google创建和设计，Material Design是一种设计语言，结合成功设计的经典原理以及创新和技术。',
       md:['./static/md/istroe.md'],
     },{
       name:'Bootstrap',
-      image:'./static/bootstrap.png',
+      image:'./static/image/bootstrap.png',
       explain:'Bootstrap',
       detail:'Bootstrap是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目',
       md:['./static/md/jump.md']
     },{
       name:'FNUI',
-      image:'./static/fnui.png',
+      image:'./static/image/fnui.png',
       explain:'现代浏览器框架',
       link:'./static/FNUI',
       detail:'蜂鸟UI(以下称FNUI) 针对框架过重、加载过多、 模板引擎过于复杂等因素，重新构造的新版现代浏览器框架。',
@@ -74,31 +74,71 @@ config.modules.resource = {
   children:[
     {
       name:'简洁',
-      image:'./static/ppt1.png',
+      image:'./static/image/ppt1.png',
       detail:'伦敦风格简洁',
       id:'1'
     },
     {
       name:'扁平',
-      image:'./static/ppt2.png',
+      image:'./static/image/ppt2.png',
       detail:'适合培训行业年终总结汇报简约扁平化ppt模板',
       id:'2'
     },
     {
       name:'中国风',
-      image:'./static/ppt3.png',
+      image:'./static/image/ppt3.png',
       detail:'适合培训行业年终总结汇报简约扁平化ppt模板',
       id:'3'
     },
     {
       name:'商务',
-      image:'./static/ppt4.png',
+      image:'./static/image/ppt4.png',
       detail:'适合培训行业年终总结汇报简约扁平化ppt模板',
       id:'4'
-    }
+    },{
+      name:'工银聚',
+      image:'./static/image/ppt5.png',
+      detail:'工银聚模板',
+      id:'5'
+    },
+    {
+      name:'大气',
+      image:'./static/image/ppt6.png',
+      detail:'大气简洁商务ppt模板',
+      id:'6'
+    },
+    // {
+    //   name:'工银聚',
+    //   image:'./static/image/ppt7.png',
+    //   detail:'工银聚模板',
+    //   id:'7'
+    // },
+    {
+      name:'简约',
+      image:'./static/image/ppt8.png',
+      detail:'简约图表ppt模板',
+      id:'8'
+    },
+    {
+      name:'清爽',
+      image:'./static/image/ppt9.png',
+      detail:'多彩简洁清爽总结汇报',
+      id:'9'
+    },
+    {
+      name:'商务计划',
+      image:'./static/image/ppt10.png',
+      detail:'超实用明亮百搭商务计划书模板',
+      id:'10'
+    },{
+      name:'企业',
+      image:'./static/image/ppt11.png',
+      detail:'高端大气企业介绍ppt模板',
+      id:'11'
+    },
   ]
 };
-// config.about = {
-//   name:'关于',
-//   id:'About'
-// };
+config.about = {
+  name:'关于',
+  id:'About'
+};
