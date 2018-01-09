@@ -78,7 +78,7 @@
     },
     activated(){
       if(this.$route.params.md){
-        this.parseMd(Object.values(this.$route.params.md),this.markdown);
+        this.parseMd(this.$route.params.md,this.markdown);
       }
     },
     deactivated(){
