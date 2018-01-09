@@ -1,15 +1,18 @@
 <template>
-  <div>
-    <h1>{{msg}}</h1>
-    <p v-html="detail"></p>
+  <div class="row">
+    <div class="container">
+      <div class="col s12">
+        <h2 class="header">{{about.msg}}</h2>
+        <p class="caption" v-html="about.detail"></p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
   export default {
     data () {
       return {
-        msg: "前端资源仓库",
-        detail:'前端资源仓库集成了工银聚团队开发必须的开发框架及文档介绍。。。'
+        about:config.about,
       }
     }
   }

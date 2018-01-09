@@ -6,7 +6,6 @@ const Detail = r => require.ensure([], () => r(require('./components/detail')), 
 const About = r => require.ensure([], () => r(require('./components/about')), 'About');
 Vue.use(VueRouter);
 
-console.log(About)
 const router = new VueRouter({
   routes : [
      {

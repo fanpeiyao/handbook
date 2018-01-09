@@ -9,26 +9,26 @@ config.modules.framework = {
       image:'./static/image/Juicy.png',
       explain:'Juicy框架--独立应用的前端开发框架',
       detail:'Juicy框架是前端团队构建的用来进行s3独立页面应用的开发工作的一个框架，Juicy集成了工银聚团队开发必须的s3.js。',
-      md:['./static/md/juicy.md']
+      md:['./static/md/juicy/juicy.md','./static/md/juicy/config.md','./static/md/juicy/regulation.md','./static/md/juicy/version.md']
     },
     {
       name:'S3',
       image:'./static/image/s3js.png',
       explain:'前端框架中的核心模块',
       detail:'s3.js（或S3.js)提供了处理浏览器兼容性、前后台调用、页面跳转、数据处理、页面缓存、事件管理等方面的功能。',
-      md:['./static/md/ajax.md','./static/md/calculator.md','./static/md/element.md']
+      md:['./static/md/s3/s3.md']
     },{
       name:'Materializecss',
       image:'./static/image/material.png',
       explain:'Material Design',
       detail:'由Google创建和设计，Material Design是一种设计语言，结合成功设计的经典原理以及创新和技术。',
-      md:['./static/md/istroe.md'],
+      link:'./static/Materializecss',
     },{
       name:'Bootstrap',
       image:'./static/image/bootstrap.png',
       explain:'Bootstrap',
       detail:'Bootstrap是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目',
-      md:['./static/md/jump.md']
+      // md:['./static/md/jump.md']
     },{
       name:'FNUI',
       image:'./static/image/fnui.png',
@@ -47,16 +47,19 @@ config.modules.plugins = {
       name:'artTemplate',
       image:'',
       explain:'模板引擎',
+      md:['./static/md/artTemplate/arttemplate.md'],
       detail:'art-template是一个简约、超快的模板引擎。它采用作用域预声明的技术来优化模板渲染速度，从而获得接近 JavaScript 极限的运行性能，并且同时支持 NodeJS 和浏览器。在线速度测试。',
     },{
       name:'Datatables',
       image:'',
       explain:'表格插件',
+      md:['./static/md/Datatables/datatables.md'],
       detail:'Datatables是一款jquery表格插件。是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。',
     },{
-      name:'artTemplate',
+      name:'Swiper',
       image:'',
       explain:'触摸滑动插件',
+      md:['./static/md/swiper/swiper.md'],
       detail:'Swiper是纯javascript打造的滑动特效插件，面向手机、平板电脑等移动终端，使用简单、稳定、功能强大，是架构移动终端网站的重要选择。',
     },
     // {
@@ -140,5 +143,9 @@ config.modules.resource = {
 };
 config.about = {
   name:'关于',
-  id:'About'
+  id:'About',
+  msg: "前端资源仓库",
+  detail:'前端资源仓库集成了工银聚团队开发必须的开发框架及文档介绍...',
+  footer:'© 2017 交互设计线',
+  header:'WELCOME'
 };
