@@ -1,4 +1,4 @@
-let config= {};
+var config= {};
 config.modules = {};
 config.modules.framework = {
   name:'前端框架',
@@ -145,7 +145,12 @@ config.about = {
   name:'关于',
   id:'About',
   msg: "前端资源仓库",
+  logo:'./static/image/logo.png',
+  icon:'./static/image/back.png',
+  version:'v0.0.2',
   detail:'前端资源仓库集成了工银聚团队开发必须的开发框架及文档介绍...',
   footer:'© 2017 交互设计线',
-  header:'WELCOME'
+  header:'WELCOME',
+  backTxt:'返回首页',
+  backHref:'ui.gyj.com',
 };

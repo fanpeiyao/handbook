@@ -6,12 +6,16 @@ const Detail = r => require.ensure([], () => r(require('./components/detail')), 
 const About = r => require.ensure([], () => r(require('./components/about')), 'About');
 Vue.use(VueRouter);
 
+function getFirstKey(obj) {
+  for(var k in obj)
+      return k;
+};
 const router = new VueRouter({
   routes : [
      {
        path:'/',
        abstract:true,
-       redirect: '/framework'
+       redirect: '/'+getFirstKey(config.modules)
      },
     {
       path:'/about',

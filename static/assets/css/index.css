@@ -53,6 +53,10 @@ ul.side-nav.fixed li.logo {
   padding: 0 32px;
   width: 100%;
 }
+.patreon-ad > a >img {
+  width: 20px;
+  vertical-align: middle;
+}
 a.button-collapse.top-nav {
   position: absolute;
   text-align: center;

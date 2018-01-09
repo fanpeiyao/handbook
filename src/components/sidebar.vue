@@ -9,8 +9,8 @@
     <ul id="slide-nav" class="side-nav fixed">
       <li class="logo">
         <div id="logo-container" class="brand-logo">
-          <img src="../../static/image/logo.png" alt="" height="100px">
-          <div>前端资源仓库 v0.0.1</div>
+          <img :src="back.logo" alt="" height="100px">
+          <div>{{back.msg}}&nbsp;{{back.version}}</div>
         </div>
       </li>
       <li class="bold"  v-for="module in modules">
@@ -21,7 +21,9 @@
       </li>
     </ul>
     <div class="patreon-ad ">
-      <a href="##" class="waves-effect waves-teal">加入我们吧！</a>
+      <a :href="back.backHref" class="waves-effect waves-teal">
+        <img :src="back.icon" alt="">
+        {{back.backTxt}}</a>
     </div>
   </header>
 </template>
@@ -29,7 +31,8 @@
   export default {
     data () {
       return {
-        modules:config.modules
+        modules:config.modules,
+        back:config.about
       }
     }
   }
