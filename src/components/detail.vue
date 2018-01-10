@@ -55,6 +55,8 @@
     },
     methods: {
       parseMd:function(handbook,str){
+        console.log(handbook)
+
         let resource = handbook.shift(),that = this;
         $.get(resource,function (result) {
           str = str + result;
@@ -77,9 +79,10 @@
       }
     },
     activated(){
-      if(this.$route.params.md){
-        this.parseMd(this.$route.params.md,this.markdown);
-      }
+      if(this.$route.params.md.length != 0)
+        sessionStorage.setItem(this.$route.path,this.$route.params.md);
+      this.$route.params.md.length == 0 ? this.$route.params.md = sessionStorage.getItem(this.$route.path).split(',') : this.$route.params.md;
+      this.parseMd(this.$route.params.md,this.markdown);
     },
     deactivated(){
       $('#test-editormd-view').html('');
