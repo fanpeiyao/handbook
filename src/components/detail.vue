@@ -32,7 +32,7 @@
   }
   #sidebar h1 {
     font-size: 16px;
-    width: 20px;
+    width: 15px;
     margin-top: 10px;
     transform:rotate(90deg);
     -ms-transform:rotate(90deg);    /* IE 9 */
@@ -52,13 +52,13 @@
     left: 40%;
     margin-top: -50px;
   }
-  .directories img{
-    width: 20px;
+  .directories i{
     display: block;
+    margin-left: -3px;
+    font-size: 20px;
   }
-
   #test-editormd-view{
-    padding-left: 100px;
+    padding-left: 110px;
     padding-right: 0;
     margin: 0;
   }
@@ -68,13 +68,12 @@
     width: 100%;
     height: 100%;
     background: rgba(247, 247, 245,.5);
-    opacity: 0;
+    display: none;
     -webkit-transition: all 500ms cubic-bezier(0.75, 0, 0.175, 1);
     -moz-transition: all 500ms cubic-bezier(0.75, 0, 0.175, 1);
     -o-transition: all 500ms cubic-bezier(0.75, 0, 0.175, 1);
     transition: all 500ms cubic-bezier(0.75, 0, 0.175, 1);
   }
-
   .markdown-body a {
     color: #333;
     -webkit-transition: all 100ms ease-in;
@@ -96,7 +95,6 @@
   .markdown-toc-list .toc-level-1{
     font-weight: 600;
   }
-
   .markdown-toc-list>li:first-child{
     margin-top: 0;
   }
@@ -105,15 +103,7 @@
     background:rgb(45,131,206);
     color: #fff;
     text-decoration: none;
-
   }
-  /*.markdown-toc-list li:hover {*/
-    /*padding-left:.4em;*/
-    /*background:#2d83ce;*/
-    /*color: #fff;*/
-
-  /*}*/
-
 </style>
 <template>
   <div id="layout">
@@ -121,7 +111,7 @@
     <div id="sidebar" @mouseover="show" @mouseout="hide">
       <!--<h1>Directories</h1>-->
       <div class="directories">
-        <img src="./../../static/image/menu.png" alt="">
+        <i class="material-icons">menu</i>
         <h1>DIRECTORIES</h1>
       </div>
       <div class="markdown-body editormd-preview-container" id="custom-toc-container"></div>
@@ -163,12 +153,10 @@
         })
       },
       show:function () {
-        this.$refs.mask.style.opacity='1';
-
+        this.$refs.mask.style.display='block';
       },
       hide:function () {
-        this.$refs.mask.style.opacity='0';
-
+        this.$refs.mask.style.display='none';
       }
     },
     activated(){

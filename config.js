@@ -141,11 +141,11 @@ config.about = {
   id:'About',
   msg: "前端资源仓库",
   logo:'./static/image/logo.png',
-  icon:'./static/image/back.png',
+  icon:'navigate_before',
   version:'v0.0.2',
   detail:'前端资源仓库集成了工银聚团队开发必须的开发框架及文档介绍...',
   footer:'© 2017 交互设计线',
   header:'WELCOME',
   backTxt:'返回首页',
-  backHref:'ui.gyj.com',
+  backHref:'handbook.gyj.com',
 };

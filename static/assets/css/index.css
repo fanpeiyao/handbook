@@ -53,9 +53,10 @@ ul.side-nav.fixed li.logo {
   padding: 0 32px;
   width: 100%;
 }
-.patreon-ad > a >img {
-  width: 20px;
+.patreon-ad > a >i {
   vertical-align: middle;
+  font-size: 26px;
+  width: 25px;
 }
 a.button-collapse.top-nav {
   position: absolute;
@@ -78,7 +79,13 @@ main > .section {
   width: 100%;
   background: #ee6e73;
 }
-
+.like-tab i{
+  color: #fff;
+  position: absolute;
+  top: 18px;
+  left: 105px;
+  font-size: 26px;
+}
 /*卡片*/
 .material-card {
   position: relative;

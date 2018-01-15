@@ -22,7 +22,7 @@
     </ul>
     <div class="patreon-ad ">
       <a :href="back.backHref" class="waves-effect waves-teal">
-        <img :src="back.icon" alt="">
+        <i class="material-icons">{{back.icon}}</i>
         {{back.backTxt}}</a>
     </div>
   </header>
