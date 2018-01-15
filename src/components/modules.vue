@@ -24,7 +24,7 @@
                 <div class="mc-footer">
                   <router-link v-if='$route.params.modules != "resource" && list.link == undefined ' class="waves-effect white-text btn-login btn " :to="{name:'detail', params: { modules:$route.params.modules,module:list.name,md: list.md,showDetail: true}}" >阅读手册</router-link>
                   <a v-else-if='$route.params.modules != "resource" && list.link != undefined' :href="list.link"   class="waves-effect white-text btn-login btn " >阅读手册</a>
-                  <a v-else :href="'./../../static/resource/'+list.id+'.ppt'"  :download="list.detail+'.ppt'" class="waves-effect white-text btn-login btn " >点击下载</a>
+                  <a v-else :href="'./static/resource/'+list.id+'.'+list.unit"  :download="list.detail+'.'+list.unit" class="waves-effect white-text btn-login btn " >点击下载</a>
                 </div>
               </article>
             </div>

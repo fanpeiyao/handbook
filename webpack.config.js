@@ -45,8 +45,6 @@ js文件通过babel语法解析。
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      // '@': resolve('src'),
-      /*'materialize':resolve('src/assets/materialize'),*/
       'assets': path.resolve(__dirname, 'src/assets'),
 
     },

@@ -79,7 +79,8 @@ config.modules.resource = {
       name:'简洁',
       image:'./static/image/ppt1.png',
       detail:'伦敦风格简洁',
-      id:'1'
+      id:'1',
+      unit:'aa'
     },
     {
       name:'扁平',
@@ -90,7 +91,7 @@ config.modules.resource = {
     {
       name:'中国风',
       image:'./static/image/ppt3.png',
-      detail:'适合培训行业年终总结汇报简约扁平化ppt模板',
+      detail:'中国风',
       id:'3'
     },
     {
@@ -110,12 +111,6 @@ config.modules.resource = {
       detail:'大气简洁商务ppt模板',
       id:'6'
     },
-    // {
-    //   name:'工银聚',
-    //   image:'./static/image/ppt7.png',
-    //   detail:'工银聚模板',
-    //   id:'7'
-    // },
     {
       name:'简约',
       image:'./static/image/ppt8.png',
